@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_activity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="@dimen/popup_width_add_source"
+            android:layout_height="@dimen/popup_height_add_source"
+            android:background="@color/colorWhite"
+            android:elevation="@dimen/margin_padding_size_small"
+            app:cardCornerRadius="@dimen/margin_padding_size_small">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text_close"
+                    android:layout_width="@dimen/width_height_icon_close"
+                    android:layout_height="@dimen/width_height_icon_close"
+                    android:layout_gravity="end"
+                    android:layout_marginBottom="@dimen/margin_padding_size_medium"
+                    android:layout_marginRight="@dimen/margin_padding_size_micro"
+                    android:layout_marginTop="@dimen/margin_padding_size_micro"
+                    android:background="@drawable/circle_background"
+                    android:gravity="center"
+                    android:text="X"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="@dimen/margin_padding_size_large"
+                    android:text="@string/popup_question"
+                    android:textColor="@color/colorText"
+                    android:textSize="@dimen/margin_padding_size_medium"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/radio_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/margin_padding_size_xlarge">
+
+                    <RadioButton
+                        android:id="@+id/mail_radioBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_padding_size_small"
+                        android:button="@drawable/radio_btn_background"
+                        android:drawableLeft="@drawable/mail"
+                        android:drawablePadding="@dimen/margin_padding_size_small"
+                        android:paddingLeft="@dimen/margin_padding_size_medium"
+                        android:text="@string/mail_news_source"
+                        android:textColor="@drawable/radio_btn_colortext"
+                        android:textSize="@dimen/text_size_small"
+                        android:textStyle="bold" />
+
+                    <RadioButton
+                        android:id="@+id/bleacher_radioBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_padding_size_small"
+                        android:button="@drawable/radio_btn_background"
+                        android:drawableLeft="@drawable/bleacher"
+                        android:drawablePadding="@dimen/margin_padding_size_small"
+                        android:paddingLeft="@dimen/margin_padding_size_medium"
+                        android:text="@string/bleacher_news_source"
+                        android:textColor="@drawable/radio_btn_colortext"
+                        android:textSize="@dimen/text_size_small"
+                        android:textStyle="bold" />
+
+                    <RadioButton
+                        android:id="@+id/alJazeera_radioBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/radio_btn_background"
+                        android:drawableLeft="@drawable/rt"
+                        android:drawablePadding="@dimen/margin_padding_size_small"
+                        android:paddingLeft="@dimen/margin_padding_size_medium"
+                        android:text="@string/rt_news_source"
+                        android:textColor="@drawable/radio_btn_colortext"
+                        android:textSize="@dimen/text_size_small"
+                        android:textStyle="bold" />
+
+                </RadioGroup>
+
+                <Button
+                    android:id="@+id/btn_add"
+                    android:layout_width="@dimen/popup_btn_width"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="@dimen/margin_padding_size_medium"
+                    android:background="@drawable/btn_bold"
+                    android:text="@string/popup_btn_add"
+                    android:textColor="@color/colorWhite" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+
+</ScrollView>

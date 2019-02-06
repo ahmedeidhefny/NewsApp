@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">NewsApp</string>
+    <string name="action_close">Close</string>
+    <string name="more_news">More News..</string>
+
+    <string name="error_massage_newsArticle">News Article Not Found</string>
+    <string name="popup_question">What is your favorite News Source ?</string>
+    <string name="add_source">Add News Source</string>
+    <string name="error_massage_notselect">Please, Select NewsSource..?</string>
+    <string name="loading_massage">loading ... please wait</string>
+    <string name="check_internet_massage">Faild..check internet connection!</string>
+    <string name="error_massage_no_internet">Faild to get the result, check tne Internet Connection..</string>
+
+    <string name="bbc_news_source">BBC News</string>
+    <string name="mail_news_source">Daily Mail</string>
+    <string name="bleacher_news_source">Bleacher Report</string>
+    <string name="rt_news_source">RT News</string>
+
+    <string name="popup_btn_add">Add</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
