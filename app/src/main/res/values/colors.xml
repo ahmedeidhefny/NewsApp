@@ -5,6 +5,7 @@
     <color name="colorAccent">#FFCC00</color>
     <color name="colorWhite">#fff</color>
     <color name="colorText">#000</color>
-    <color name="background_activity_2">#eae2e5</color>
-    <color name="background_activity">#F2F2F2</color>
+    <color name="background_activity">#eae2e5</color>
+    <color name="background_activity_2">#F2F2F2</color>
+    <color name="colorTextLink">#6b70c4</color>
 </resources>

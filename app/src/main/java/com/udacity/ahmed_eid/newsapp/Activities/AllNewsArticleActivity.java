@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.ContentLoadingProgressBar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,10 +17,9 @@ import android.widget.Toast;
 
 import com.udacity.ahmed_eid.newsapp.Fragments.NewsFragment;
 import com.udacity.ahmed_eid.newsapp.Model.News;
-import com.udacity.ahmed_eid.newsapp.Adapters.AllNewsAdapter;
 import com.udacity.ahmed_eid.newsapp.Utilies.AppConstants;
 import com.udacity.ahmed_eid.newsapp.R;
-import com.udacity.ahmed_eid.newsapp.Utilies.GetNewsArticlesList;
+import com.udacity.ahmed_eid.newsapp.Utilies.VolleyManager;
 
 import java.util.ArrayList;
 
@@ -92,8 +89,8 @@ public class AllNewsArticleActivity extends AppCompatActivity {
 
     public void populateUI(String url) {
         if (url != null) {
-            GetNewsArticlesList newsArticlesList = new GetNewsArticlesList(this);
-            newsArticlesList.getAllNewsArticles(url, new GetNewsArticlesList.VolleyCallback() {
+            VolleyManager volleyManager = new VolleyManager(this);
+            volleyManager.getAllNewsArticles(url, new VolleyManager.VolleyCallback() {
                 @Override
                 public void onSuccess(ArrayList<News> news) {
                     setUpToggle(news);

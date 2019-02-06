@@ -27,7 +27,7 @@
             android:linksClickable="true"
             android:textColorLink="@color/colorAccent"
             android:padding="@dimen/margin_padding_size_small"
-            android:textColor="@color/colorText"
+            android:textColor="@color/colorTextLink"
             android:textSize="@dimen/text_size_medium"
             android:textStyle="bold"
             tools:text="@string/bbc_news_source" />
@@ -48,7 +48,7 @@
         android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
         android:padding="@dimen/margin_padding_size_micro"
         android:text="@string/more_news"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/colorTextLink"
         android:textSize="@dimen/text_size_small"
         android:textStyle="bold" />
 

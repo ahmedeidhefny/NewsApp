@@ -1,12 +1,10 @@
 package com.udacity.ahmed_eid.newsapp.Activities;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.widget.ContentLoadingProgressBar;
@@ -27,7 +25,7 @@ import com.udacity.ahmed_eid.newsapp.Model.News;
 import com.udacity.ahmed_eid.newsapp.Model.Source;
 import com.udacity.ahmed_eid.newsapp.R;
 import com.udacity.ahmed_eid.newsapp.Utilies.AppConstants;
-import com.udacity.ahmed_eid.newsapp.Utilies.GetNewsArticlesList;
+import com.udacity.ahmed_eid.newsapp.Utilies.VolleyManager;
 
 import java.util.ArrayList;
 
@@ -37,7 +35,7 @@ public class MainScreenActivity extends AppCompatActivity {
     private FloatingActionButton fab;
     private ArrayList<String> allNewsURLs;
     private RecyclerView sourceRecycler;
-    GetNewsArticlesList newsArticlesList;
+    VolleyManager volleyManager;
     private static final String TAG = "MainScreenActivity";
 
     //handle internet connection
@@ -91,7 +89,7 @@ public class MainScreenActivity extends AppCompatActivity {
         fab = findViewById(R.id.fab);
         allNewsURLs = new ArrayList<>();
         sourceRecycler = findViewById(R.id.recycler_sources);
-        newsArticlesList = new GetNewsArticlesList(this);
+        volleyManager = new VolleyManager(this);
         loadingProgressBar = findViewById(R.id.progress_bar);
         progressLayout = findViewById(R.id.progress_layout);
         noInternetText = findViewById(R.id.error_massage_display);
@@ -176,7 +174,7 @@ public class MainScreenActivity extends AppCompatActivity {
     }
 
     public void getData() {
-        newsArticlesList.getAllNewsArticles(AppConstants.BBCurl, new GetNewsArticlesList.VolleyCallback() {
+        volleyManager.getAllNewsArticles(AppConstants.BBCurl, new VolleyManager.VolleyCallback() {
             @Override
             public void onSuccess(ArrayList<News> news) {
                 getData(news);
@@ -187,7 +185,7 @@ public class MainScreenActivity extends AppCompatActivity {
     }
 
     public void getData(final ArrayList<News> news1) {
-        newsArticlesList.getAllNewsArticles(AppConstants.ABCurl, new GetNewsArticlesList.VolleyCallback() {
+        volleyManager.getAllNewsArticles(AppConstants.ABCurl, new VolleyManager.VolleyCallback() {
             @Override
             public void onSuccess(ArrayList<News> news2) {
                 getData(news1, news2);
@@ -197,7 +195,7 @@ public class MainScreenActivity extends AppCompatActivity {
 
     public void getData(final ArrayList<News> news1, final ArrayList<News> news2) {
         final ArrayList<Source> sources = new ArrayList<>();
-        newsArticlesList.getAllNewsArticles(AppConstants.CNNul, new GetNewsArticlesList.VolleyCallback() {
+        volleyManager.getAllNewsArticles(AppConstants.CNNul, new VolleyManager.VolleyCallback() {
             @Override
             public void onSuccess(ArrayList<News> news3) {
                 if (sourceName == null && sourceAllUrl == null && sourceTopUrl == null && sourceWebsite == null) {
@@ -215,7 +213,7 @@ public class MainScreenActivity extends AppCompatActivity {
     public void getData(final ArrayList<News> news1, final ArrayList<News> news2, final ArrayList<News> news3) {
         if (sourceName != null && sourceAllUrl != null && sourceTopUrl != null && sourceWebsite != null) {
             final ArrayList<Source> sources = new ArrayList<>();
-            newsArticlesList.getAllNewsArticles(sourceTopUrl, new GetNewsArticlesList.VolleyCallback() {
+            volleyManager.getAllNewsArticles(sourceTopUrl, new VolleyManager.VolleyCallback() {
                 @Override
                 public void onSuccess(ArrayList<News> news4) {
                     sources.add(0, new Source("BBC News", R.drawable.bbc, AppConstants.BBCsite, AppConstants.sBBCurl, news1));
